@@ -89,6 +89,7 @@ impl SVGWriter {
     fn grow_window(&mut self, point: Point, size: Point) {
         self.view_size.x = self.view_size.x.max(point.x + size.x);
         self.view_size.y = self.view_size.y.max(point.y + size.y);
+        println!("Grown to {}", self.view_size);
     }
 
     // Gets or creates a font 'class' for the parameters. Returns the class
