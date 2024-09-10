@@ -129,10 +129,7 @@ impl SVGWriter {
         let svg_line = format!(
             "<svg width=\"{}\" height=\"{}\" viewBox=\"0 0 {} {}\
             \" xmlns=\"http://www.w3.org/2000/svg\">\n",
-            self.view_size.x + 5.,
-            self.view_size.y + 5.,
-            self.view_size.x + 5.,
-            self.view_size.y + 5.
+            5., 5., 5., 5.
         );
         result.push_str(&svg_line);
         result.push_str(SVG_DEFS);
