@@ -87,8 +87,8 @@ impl SVGWriter {
     // Grow the viewable svg window to include the point \p point plus some
     // offset \p size.
     fn grow_window(&mut self, point: Point, size: Point) {
-        self.view_size.x = self.view_size.x.max(point.x + size.x + 5.);
-        self.view_size.y = self.view_size.y.max(point.y + size.y + 5.);
+        self.view_size.x = self.view_size.x.max(point.x + size.x);
+        self.view_size.y = self.view_size.y.max(point.y + size.y);
     }
 
     // Gets or creates a font 'class' for the parameters. Returns the class
@@ -129,10 +129,10 @@ impl SVGWriter {
         let svg_line = format!(
             "<svg width=\"{}\" height=\"{}\" viewBox=\"0 0 {} {}\
             \" xmlns=\"http://www.w3.org/2000/svg\">\n",
-            self.view_size.x,
-            self.view_size.y,
-            self.view_size.x,
-            self.view_size.y
+            self.view_size.x + 5.,
+            self.view_size.y + 5.,
+            self.view_size.x + 5.,
+            self.view_size.y + 5.
         );
         result.push_str(&svg_line);
         result.push_str(SVG_DEFS);
